@@ -12,7 +12,7 @@
 
 #### Python 應用
 
-- [pandas 專題：奧運獎牌](http://yaojenkuo.io/py4ds_pccu/pandas_olympic.slides.html)
+- [pandas 專題：奧運獎牌排行](http://yaojenkuo.io/py4ds_pccu/pandas_olympic.slides.html)
 - [pandas 專題：美國普查](http://yaojenkuo.io/py4ds_pccu/pandas_us_census.slides.html)
 
 #### 網站擷取實作
