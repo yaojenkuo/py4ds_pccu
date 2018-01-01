@@ -22,7 +22,6 @@
 - [pandas 專題：奧運獎牌排行](http://yaojenkuo.io/py4ds_pccu/pandas_olympic.slides.html)
 - [pandas 專題：美國普查](http://yaojenkuo.io/py4ds_pccu/pandas_us_census.slides.html)
 - [pandas 專題：]()
-- [資料載入與輸出]()
 - [文字函數與正規表達式]()
 - [靜態網頁擷取]()
 - [動態網頁擷取]()
