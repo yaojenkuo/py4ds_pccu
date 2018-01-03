@@ -18,7 +18,7 @@
 
 #### Python 應用
 
-- [pandas 入門]()
+- [pandas 入門](http://yaojenkuo.io/py4ds_pccu/pandas_intro.slides.html)
 - [pandas 專題：奧運獎牌排行](http://yaojenkuo.io/py4ds_pccu/pandas_olympic.slides.html)
 - [pandas 專題：美國普查](http://yaojenkuo.io/py4ds_pccu/pandas_us_census.slides.html)
 - [pandas 專題：]()
