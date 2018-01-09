@@ -19,18 +19,18 @@
 #### Python 應用
 
 - [pandas 入門](http://yaojenkuo.io/py4ds_pccu/pandas_intro.slides.html)
+- [文字與正規表達式](http://yaojenkuo.io/py4ds_pccu/str_reg.slides.html)
 - [pandas 專題：奧運獎牌排行](http://yaojenkuo.io/py4ds_pccu/pandas_olympic.slides.html)
 - [pandas 專題：美國普查](http://yaojenkuo.io/py4ds_pccu/pandas_us_census.slides.html)
 - [pandas 專題：能源指標](http://yaojenkuo.io/py4ds_pccu/pandas_energy_indicator.slides.html)
-- [文字與正規表達式](http://yaojenkuo.io/py4ds_pccu/str_reg.slides.html)
-- [靜態網頁擷取]()
+- [靜態網頁擷取](http://yaojenkuo.io/py4ds_pccu/static_scraper.slides.html)
 - [動態網頁擷取]()
 
 #### 網站擷取實作
 
 - IMDB
-- 批踢踢實業坊
 - Yahoo! 奇摩股市
+- 批踢踢實業坊
 - Yahoo! Finance
 - PCHome
 - 591 房屋網
