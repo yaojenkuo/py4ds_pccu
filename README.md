@@ -24,7 +24,7 @@
 - [pandas 專題：美國普查](http://yaojenkuo.io/py4ds_pccu/pandas_us_census.slides.html)
 - [pandas 專題：能源指標](http://yaojenkuo.io/py4ds_pccu/pandas_energy_indicator.slides.html)
 - [靜態網頁擷取](http://yaojenkuo.io/py4ds_pccu/static_scraper.slides.html)
-- [動態網頁擷取]()
+- [動態網頁擷取](http://yaojenkuo.io/py4ds_pccu/dynamic_scraper.slides.html)
 
 #### 網站擷取實作
 
