@@ -12239,17 +12239,18 @@ a.anchor-link {
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">answer_three</span><span class="p">():</span>
     <span class="n">filtered_df</span> <span class="o">=</span> <span class="n">census_df</span><span class="p">[</span><span class="n">census_df</span><span class="p">[</span><span class="s1">&#39;SUMLEV&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">50</span><span class="p">]</span>
-    <span class="n">unique_ctyname</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">filtered_df</span><span class="p">[</span><span class="s1">&#39;CTYNAME&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">))</span>
+    <span class="n">filtered_df</span> <span class="o">=</span> <span class="n">filtered_df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="n">nrow</span> <span class="o">=</span> <span class="n">filtered_df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">pop_diff</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">cty</span> <span class="ow">in</span> <span class="n">unique_ctyname</span><span class="p">:</span>
-        <span class="n">cty_df</span> <span class="o">=</span> <span class="n">filtered_df</span><span class="p">[</span><span class="n">filtered_df</span><span class="p">[</span><span class="s1">&#39;CTYNAME&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">cty</span><span class="p">]</span>
-        <span class="n">pop_estimates</span> <span class="o">=</span> <span class="n">cty_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;POPESTIMATE2010&#39;</span><span class="p">:</span><span class="s1">&#39;POPESTIMATE2015&#39;</span><span class="p">]</span>
-        <span class="n">max_pop</span> <span class="o">=</span> <span class="n">pop_estimates</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="n">min_pop</span> <span class="o">=</span> <span class="n">pop_estimates</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nrow</span><span class="p">):</span>
+        <span class="n">cty</span> <span class="o">=</span> <span class="n">filtered_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;POPESTIMATE2010&#39;</span><span class="p">:</span><span class="s1">&#39;POPESTIMATE2015&#39;</span><span class="p">]</span>
+        <span class="n">max_pop</span> <span class="o">=</span> <span class="n">cty</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+        <span class="n">min_pop</span> <span class="o">=</span> <span class="n">cty</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
         <span class="n">diff_abs</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">max_pop</span> <span class="o">-</span> <span class="n">min_pop</span><span class="p">)</span>
         <span class="n">pop_diff</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">diff_abs</span><span class="p">)</span>
-    <span class="n">ser</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">pop_diff</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="n">unique_ctyname</span><span class="p">)</span>
-    <span class="n">max_idx</span> <span class="o">=</span> <span class="n">ser</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
+    <span class="n">filtered_df</span><span class="p">[</span><span class="s1">&#39;Pop_Diff_Abs&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pop_diff</span>
+    <span class="n">filtered_df</span> <span class="o">=</span> <span class="n">filtered_df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;CTYNAME&#39;</span><span class="p">,</span> <span class="n">drop</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="n">max_idx</span> <span class="o">=</span> <span class="n">filtered_df</span><span class="p">[</span><span class="s1">&#39;Pop_Diff_Abs&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
     <span class="k">return</span> <span class="n">max_idx</span>
 
 <span class="n">answer_three</span><span class="p">()</span>
@@ -12267,7 +12268,7 @@ a.anchor-link {
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;Los Angeles County&#39;</pre>
+<pre>&#39;Harris County&#39;</pre>
 </div>
 
 </div>
