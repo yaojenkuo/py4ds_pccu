@@ -31,7 +31,7 @@
 - IMDB
 - Yahoo! 奇摩股市
 - 批踢踢實業坊
+- PCHome 24h 購物
 - Yahoo! Finance
-- PCHome
 - 591 房屋網
 - 公開資訊觀測站
